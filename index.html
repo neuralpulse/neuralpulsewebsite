@@ -1,150 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neural Pulse | Custom Software Development Excellence</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .gradient-text { background: linear-gradient(90deg, #4f46e5, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neural Pulse | Custom Software Development Excellence</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #050505;
+      color: white;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #4f46e5, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Micro animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hover-lift {
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+
+    .btn-press:active {
+      transform: scale(0.97);
+    }
+  </style>
 </head>
+
 <body class="overflow-x-hidden">
 
-    <!-- NAVIGATION -->
-    <nav class="fixed w-full z-50 glass py-4 px-6 flex justify-between items-center">
-        <div class="text-2xl font-bold tracking-tighter">
-            NEURAL<span class="gradient-text">PULSE</span>
-        </div>
-        <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full text-sm font-semibold transition">
-            Get a Quote
-        </a>
-    </nav>
+<!-- NAV -->
+<nav class="fixed w-full z-50 glass py-4 px-6 flex justify-between items-center">
+  <div class="text-2xl font-bold tracking-tighter">
+    NEURAL<span class="gradient-text">PULSE</span>
+  </div>
+  <a href="#contact" class="btn-press bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full text-sm font-semibold transition">
+    Get a Quote
+  </a>
+</nav>
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-20 px-6 flex flex-col items-center text-center">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-900/20 via-transparent to-transparent -z-10"></div>
-        <span class="px-4 py-1 rounded-full border border-indigo-500/30 text-indigo-400 text-xs font-bold mb-6 tracking-widest uppercase">
-            Innovating the Digital Pulse
-        </span>
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 max-w-4xl leading-tight">
-            We Build Software That <br><span class="gradient-text">Powers Your Vision.</span>
-        </h1>
-        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
-            Neural Pulse is a full-cycle software development partner. From scalable web apps to intricate mobile ecosystems, we turn complex ideas into seamless digital experiences.
-        </p>
-        <div class="flex flex-col md:flex-row gap-4">
-            <a href="#contact" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition text-center">
-                Start Your Project
-            </a>
-            <a href="#services" class="glass px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition text-center">
-                View Our Expertise
-            </a>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="pt-32 pb-24 px-6 text-center">
+  <span class="reveal px-4 py-1 rounded-full border border-indigo-500/30 text-indigo-400 text-xs font-bold tracking-widest uppercase inline-block mb-6">
+    Innovating the Digital Pulse
+  </span>
 
-    <!-- SERVICES -->
-    <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="mb-16">
-            <h2 class="text-4xl font-bold mb-4">Our Services</h2>
-            <div class="w-20 h-1 bg-indigo-600"></div>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="glass p-8 rounded-3xl">
-                <div class="w-14 h-14 bg-indigo-600/20 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fas fa-laptop-code text-2xl text-indigo-400"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Web Development</h3>
-                <p class="text-gray-400">Scalable, high-performance web applications built with modern frameworks.</p>
-            </div>
-            <div class="glass p-8 rounded-3xl">
-                <div class="w-14 h-14 bg-purple-600/20 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fas fa-mobile-alt text-2xl text-purple-400"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Mobile Apps</h3>
-                <p class="text-gray-400">Native and cross-platform mobile solutions delivering premium UX.</p>
-            </div>
-            <div class="glass p-8 rounded-3xl">
-                <div class="w-14 h-14 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fas fa-brain text-2xl text-blue-400"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">AI & ML Solutions</h3>
-                <p class="text-gray-400">Custom AI models and intelligent automation for real business impact.</p>
-            </div>
-        </div>
-    </section>
+  <h1 class="reveal text-5xl md:text-7xl font-bold mb-6 max-w-4xl mx-auto leading-tight">
+    We Build Software That <br><span class="gradient-text">Powers Your Vision.</span>
+  </h1>
 
-    <!-- NEURAL PULSE ADVANTAGE -->
-    <section class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="mb-16 text-center">
-            <h2 class="text-4xl font-bold mb-4">The Neural Pulse Advantage</h2>
-            <p class="text-gray-400 max-w-2xl mx-auto">
-                We're not just developers—we're partners in your success. Here's what sets us apart.
-            </p>
-        </div>
+  <p class="reveal text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+    Neural Pulse is a software development partner trusted by founders and growing teams
+    to build reliable, scalable digital products.
+  </p>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="glass p-8 rounded-3xl text-center">
-                <div class="w-16 h-16 mx-auto bg-indigo-600/20 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fas fa-bolt text-3xl text-indigo-400"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Fast Delivery</h3>
-                <p class="text-gray-400">
-                    Agile methodologies ensure rapid execution without sacrificing quality.
-                </p>
-            </div>
+  <div class="flex flex-col md:flex-row justify-center gap-4">
+    <a href="#contact" class="btn-press bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+      Start Your Project
+    </a>
+    <a href="#services" class="btn-press glass px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition">
+      View Our Expertise
+    </a>
+  </div>
+</section>
 
-            <div class="glass p-8 rounded-3xl text-center">
-                <div class="w-16 h-16 mx-auto bg-purple-600/20 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fas fa-shield-halved text-3xl text-purple-400"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Secure & Reliable</h3>
-                <p class="text-gray-400">
-                    Security-first architecture keeps your data, users, and systems protected.
-                </p>
-            </div>
+<!-- SERVICES -->
+<section id="services" class="py-24 px-6 max-w-7xl mx-auto">
+  <h2 class="reveal text-4xl font-bold mb-12">Our Services</h2>
 
-            <div class="glass p-8 rounded-3xl text-center">
-                <div class="w-16 h-16 mx-auto bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fas fa-users-gear text-3xl text-blue-400"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Expert Team</h3>
-                <p class="text-gray-400">
-                    Seasoned engineers and designers with years of real-world experience.
-                </p>
-            </div>
-        </div>
-    </section>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="reveal glass p-8 rounded-3xl hover-lift">
+      <i class="fas fa-laptop-code text-indigo-400 text-2xl mb-4"></i>
+      <h3 class="text-xl font-bold mb-2">Web Development</h3>
+      <p class="text-gray-400">Scalable, high-performance web platforms built with modern frameworks.</p>
+    </div>
 
-    <!-- CONTACT -->
-    <section id="contact" class="py-24 px-6 bg-[#0a0a0a] text-center">
-        <h2 class="text-4xl font-bold mb-6">
-            Contact <span class="gradient-text">Us</span>
-        </h2>
-        <p class="text-gray-400 mb-8">
-            Reach out directly and let’s discuss how we can help you.
-        </p>
+    <div class="reveal glass p-8 rounded-3xl hover-lift">
+      <i class="fas fa-mobile-screen text-purple-400 text-2xl mb-4"></i>
+      <h3 class="text-xl font-bold mb-2">Mobile Applications</h3>
+      <p class="text-gray-400">Native and cross-platform mobile apps engineered for reliability.</p>
+    </div>
 
-        <div class="space-y-4 text-lg">
-            <div class="flex justify-center items-center space-x-3">
-                <i class="fas fa-phone text-indigo-500"></i>
-                <span>+91 8380043510</span>
-            </div>
-            <div class="flex justify-center items-center space-x-3">
-                <i class="fas fa-envelope text-indigo-500"></i>
-                <span>neuralpulse0@gmail.com</span>
-            </div>
-        </div>
-    </section>
+    <div class="reveal glass p-8 rounded-3xl hover-lift">
+      <i class="fas fa-brain text-blue-400 text-2xl mb-4"></i>
+      <h3 class="text-xl font-bold mb-2">AI & Automation</h3>
+      <p class="text-gray-400">Custom AI systems that automate workflows and unlock insights.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="py-10 text-center text-gray-500 text-sm border-t border-white/5">
-        <p>&copy; 2024 Neural Pulse Software. All rights reserved.</p>
-    </footer>
+<!-- WHAT WE DO -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+  <h2 class="reveal text-4xl font-bold mb-12">What We Do</h2>
+
+  <div class="grid md:grid-cols-2 gap-12">
+    <p class="reveal text-gray-300 text-lg leading-relaxed">
+      We design and engineer software systems that scale smoothly, remain secure under real-world usage,
+      and adapt as your business evolves. From architecture to deployment, we handle the entire lifecycle.
+    </p>
+
+    <div class="space-y-6">
+      <div class="reveal glass p-6 rounded-2xl hover-lift">
+        <strong>End-to-End Product Development</strong>
+        <p class="text-gray-400 text-sm mt-2">Concept → architecture → development → launch.</p>
+      </div>
+      <div class="reveal glass p-6 rounded-2xl hover-lift">
+        <strong>Scalable Backend Systems</strong>
+        <p class="text-gray-400 text-sm mt-2">Built to handle growth, traffic spikes, and complexity.</p>
+      </div>
+      <div class="reveal glass p-6 rounded-2xl hover-lift">
+        <strong>Ongoing Engineering Support</strong>
+        <p class="text-gray-400 text-sm mt-2">Performance tuning, feature expansion, and maintenance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="py-24 px-6 bg-[#0a0a0a]">
+  <h2 class="reveal text-4xl font-bold text-center mb-12">How We Work</h2>
+
+  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+    <div class="reveal glass p-6 rounded-2xl hover-lift">
+      <i class="fas fa-lightbulb text-indigo-400 text-xl mb-3"></i>
+      <h4 class="font-semibold">Discovery</h4>
+      <p class="text-gray-400 text-sm mt-2">Understanding goals, users, and constraints.</p>
+    </div>
+
+    <div class="reveal glass p-6 rounded-2xl hover-lift">
+      <i class="fas fa-diagram-project text-purple-400 text-xl mb-3"></i>
+      <h4 class="font-semibold">Architecture</h4>
+      <p class="text-gray-400 text-sm mt-2">Designing scalable and secure systems.</p>
+    </div>
+
+    <div class="reveal glass p-6 rounded-2xl hover-lift">
+      <i class="fas fa-code text-blue-400 text-xl mb-3"></i>
+      <h4 class="font-semibold">Development</h4>
+      <p class="text-gray-400 text-sm mt-2">Clean code, predictable delivery.</p>
+    </div>
+
+    <div class="reveal glass p-6 rounded-2xl hover-lift">
+      <i class="fas fa-rocket text-indigo-400 text-xl mb-3"></i>
+      <h4 class="font-semibold">Launch & Support</h4>
+      <p class="text-gray-400 text-sm mt-2">Monitoring, scaling, and improvements.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGE -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+  <h2 class="reveal text-4xl font-bold text-center mb-12">The Neural Pulse Advantage</h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="reveal glass p-8 rounded-3xl text-center hover-lift">
+      <i class="fas fa-bolt text-indigo-400 text-3xl mb-4"></i>
+      <h3 class="font-bold text-xl">Fast Delivery</h3>
+      <p class="text-gray-400 mt-3">Agile execution without sacrificing quality.</p>
+    </div>
+
+    <div class="reveal glass p-8 rounded-3xl text-center hover-lift">
+      <i class="fas fa-user-shield text-purple-400 text-3xl mb-4"></i>
+      <h3 class="font-bold text-xl">Secure & Reliable</h3>
+      <p class="text-gray-400 mt-3">
+        Security and reliability are embedded into every layer of our systems.
+      </p>
+    </div>
+
+    <div class="reveal glass p-8 rounded-3xl text-center hover-lift">
+      <i class="fas fa-users-gear text-blue-400 text-3xl mb-4"></i>
+      <h3 class="font-bold text-xl">Expert Team</h3>
+      <p class="text-gray-400 mt-3">Experienced engineers with real-world production expertise.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 px-6 bg-[#0a0a0a] text-center">
+  <h2 class="reveal text-4xl font-bold mb-6">Contact <span class="gradient-text">Us</span></h2>
+
+  <div class="space-y-4 text-lg">
+    <div class="reveal flex justify-center gap-3">
+      <i class="fas fa-phone text-indigo-500"></i>
+      <span>+91 8380043510</span>
+    </div>
+    <div class="reveal flex justify-center gap-3">
+      <i class="fas fa-envelope text-indigo-500"></i>
+      <span>neuralpulse0@gmail.com</span>
+    </div>
+  </div>
+
+  <p class="reveal text-gray-500 mt-6 text-sm">
+    We typically respond within 24 hours. No spam. No sales pressure.
+  </p>
+</section>
+
+<footer class="py-10 text-center text-gray-500 text-sm border-t border-white/5">
+  © 2024 Neural Pulse Software. All rights reserved.
+</footer>
+
+<!-- Reveal Script -->
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
